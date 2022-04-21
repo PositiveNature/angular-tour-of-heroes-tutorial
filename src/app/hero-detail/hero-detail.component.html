@@ -1,1 +1,14 @@
-<p>hero-detail works!</p>
+<div *ngIf="hero; else selectHeroInstructions">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div><span>name: </span>{{hero.name}}</div>
+
+  <div>
+    <label for="name">Hero name:</label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  </div>
+</div>
+
+<ng-template #selectHeroInstructions>
+  <h2>Select a hero to open details view</h2>
+</ng-template>
