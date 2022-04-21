@@ -18,7 +18,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
 
     // select first element
-    // this.selectedHero = HEROES[0]
+    // this.selectedHero = this.heroes[0]
   }
 
   getHeroes(): void {
