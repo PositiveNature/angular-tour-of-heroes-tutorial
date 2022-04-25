@@ -28,4 +28,9 @@ export class HeroDetailComponent implements OnInit {
       .subscribe(hero => this.hero = hero)
   }
 
+  goBack(): void {
+    console.log('clicked back link')
+    this.location.back();
+  }
+
 }
