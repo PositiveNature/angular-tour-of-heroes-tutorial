@@ -1,5 +1,7 @@
 # AngularTourOfHeroes
 
+> continue: [Angular Heroes Tutorial](/home/bogdanchil/projects/angular/angular-tour-of-heroes/README.md)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
