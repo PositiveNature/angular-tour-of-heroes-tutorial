@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
@@ -9,6 +9,9 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HeroService {
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
   constructor(
     private http: HttpClient,
     private messageService: MessageService,
@@ -28,6 +31,14 @@ export class HeroService {
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`updated hero id=${hero.id}`)),
+        catchError(this.handleError<any>('updateHero'))
+      );
   }
 
   private handleError<T>(operation = 'operation', result?: T)
