@@ -46,6 +46,10 @@ a {
   a {
     width: 18%;
     box-sizing: content-box;
+    margin: auto .5rem;
+    &:first-of-type{
+      margin-left: 0;
+    }
   }
 }
 
