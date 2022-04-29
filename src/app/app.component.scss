@@ -13,11 +13,7 @@ nav a {
   border-radius: 4px;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
   color: white;
   background-color: #42545C;
-}
-
-nav a.active {
-  background-color: black;
 }
