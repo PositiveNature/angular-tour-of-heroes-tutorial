@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
+import { Task } from './task';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +22,8 @@ export class InMemoryDataService implements InMemoryDbService {
     //   { id: 20, name: 'Tornado' }
     // ];
     const heroes = HEROES;
-    return {heroes};
+    const tasks: Task[] = [];
+    return {heroes, tasks};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

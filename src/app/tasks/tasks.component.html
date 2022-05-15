@@ -1,1 +1,21 @@
-<p>tasks works!</p>
+<h2>My Tasks</h2>
+
+<div>
+  <label for="new-task">Subject:</label>
+  <input type="text" id="new-task" #taskSubject />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(taskSubject.value); taskSubject.value=''">
+    Add Task
+  </button>
+</div>
+
+<ul class="tasks">
+  <li *ngFor="let task of tasks">
+    <a routerLink="/task/{{task.id}}">
+      <span class="badge">{{task.id}}</span> {{task.subject }}
+    </a>
+
+    <button type="button" class="delete" title="delete task" (click)="delete(task)">x</button>
+  </li>
+</ul>

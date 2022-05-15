@@ -4,13 +4,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { TaskComponent } from './task/task.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
-  { path: 'tasks', component: TasksComponent }
+  { path: 'tasks', component: TasksComponent },
+  { path: 'task/:id', component: TaskComponent }
 ]
 
 @NgModule({

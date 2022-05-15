@@ -1,0 +1,17 @@
+<div *ngIf="task; else noTaskFoundMessage">
+  <h2>{{task.subject | uppercase}} Details</h2>
+  <div><span>id: </span>{{task.id}}</div>
+  <div><span>subject: </span>{{task.subject}}</div>
+
+  <div>
+    <label for="subject">task subject:</label>
+    <input id="subject" [(ngModel)]="task.subject" placeholder="subject">
+  </div>
+</div>
+
+<button type="button" (click)="goBack()">Back</button>
+<button type="button" (click)="save()">save</button>
+
+<ng-template #noTaskFoundMessage>
+  <h2>No task found with that id</h2>
+</ng-template>
